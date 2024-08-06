@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url("bg.jpg");
+  background-size: cover;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box {
+  background-color: #ffffff;
+  transition: all ease-in 0.2s;
+  border-radius: 20px;
+  border: none;
+  font-size: 300%;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+  -webkit-text-stroke: 4px black;
+}
+
+.box:hover {
+  transform: scale(0.9);
+  border: 2px solid black;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  height: 45vh;
+  width: 65vw;
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+  background: #1d1e3d;
+  padding: 20px;
+  margin: 40px;
+  border-radius: 10px;
+  border: 5px solid #ffffff;
+  transition: all ease-in 0.2s;
+  font-family: "Times New Roman", Times, serif;
+}
+
+h1:hover {
+  transform: scale(0.9);
+}
+
+.reset {
+  padding: 20px;
+  margin-top: 80px;
+  font-size: 1.25rem;
+  font-weight: bolder;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+}
+
+.reset:hover {
+  transform: scale(0.9);
+}
+
+/* Popup styling and animation */
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  height: 40vh;
+  background-color: #ffffff;
+  text-align: center;
+  border-radius: 6px;
+  position: absolute;
+  top: -100%; /* Start above the viewport */
+  left: 30%;
+  visibility: hidden;
+  transition: visibility 0.4s, transform 0.4s;
+  border: 4px solid #00000049;
+  z-index: 10;
+}
+
+@keyframes slideDown {
+  0% {
+    top: -100%;
+    transform: translateY(-50%);
+  }
+  100% {
+    top: 25%;
+    transform: translateY(0);
+  }
+}
+
+.popup.opene {
+  visibility: visible;
+  animation: slideDown 1s forwards; /* Play the animation */
+}
+
+.popup h2 {
+  font-size: 28px;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 500;
+  margin: 30px 0 10px;
+}
+
+.popup button {
+  width: 50%;
+  margin-top: 40px;
+  padding: 5px 0;
+  font-size: 0.75rem;
+  font-weight: bolder;
+  border-radius: 4px;
+  background-color: #6fd649;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: all ease-in 0.2s;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.308);
+}
+
+.popup button:hover {
+  transform: scale(0.9);
+}
+
+.popup img {
+  width: 50px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #ffd700;
+  padding: 4px;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.308);
+}
